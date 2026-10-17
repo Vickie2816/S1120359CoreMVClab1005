@@ -1,0 +1,71 @@
+@model IEnumerable<S1120359CoreMVClab1005.Models.Food>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Restaurant)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Description)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FoodId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FoodId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FoodId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
